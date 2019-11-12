@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tblNhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -57,21 +55,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.saveExcel = new System.Windows.Forms.SaveFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.tblNhanVienBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienThi)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tblNhanVienBindingSource
-            // 
-            this.tblNhanVienBindingSource.DataMember = "tbl_NhanVien";
-            // 
-            // tNBDataSet
-            // 
-            // 
-            // tbl_NhanVienTableAdapter
-            // 
             // 
             // groupBox1
             // 
@@ -344,7 +331,6 @@
             this.Name = "NhanVien";
             this.Text = "NhanVien";
             this.Load += new System.EventHandler(this.NhanVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblNhanVienBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienThi)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -355,7 +341,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource tblNhanVienBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvHienThi;
         private System.Windows.Forms.GroupBox groupBox2;
