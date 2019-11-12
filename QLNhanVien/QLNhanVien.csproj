@@ -117,15 +117,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\100-icon-de-thuong_110447687.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\44958789_594757054276819_5284679815725580288_n.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
