@@ -143,24 +143,23 @@ namespace QLThuNhoiBong
                 }
 
                 //Nhap thong so trong datagridview
-                for (int i = 0; i < dgvHienThi.Rows.Count; i++)
+                for (int i = 0; i < dgvHienThi.Rows.Count - 1; i++)
                 {
-                    if (i < dgvHienThi.Rows.Count - 1)
+                    exSheet.get_Range("A" + (i + 5).ToString()).Font.Bold = false;
+                    exSheet.get_Range("A" + (i + 5).ToString()).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                    exSheet.get_Range("A" + (i + 5).ToString()).Value = (i + 1).ToString();
+                    exSheet.get_Range("A" + (i + 5).ToString()).BorderAround2();
+                    ascii = (char)66;
+                    for (int j = 0; j < dgvHienThi.Columns.Count; j++)
                     {
-                        exSheet.get_Range("A" + (i + 5).ToString()).Font.Bold = false;
-                        exSheet.get_Range("A" + (i + 5).ToString()).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-                        exSheet.get_Range("A" + (i + 5).ToString()).Value = (i + 1).ToString();
-                        exSheet.get_Range("A" + (i + 5).ToString()).BorderAround2();
-                        ascii = (char)66;
-                        for (int j = 0; j < dgvHienThi.Columns.Count; j++)
-                        {
-                            exSheet.get_Range(ascii + (i + 5).ToString()).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
-                            exSheet.get_Range(ascii + (i + 5).ToString()).Value = dgvHienThi.Rows[i].Cells[j].Value;
-                            exSheet.get_Range(ascii + (i + 5).ToString()).BorderAround2();
-                            ascii++;
-                        }
+                        exSheet.get_Range(ascii + (i + 5).ToString()).HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                        exSheet.get_Range(ascii + (i + 5).ToString()).Value = dgvHienThi.Rows[i].Cells[j].Value;
+                        exSheet.get_Range(ascii + (i + 5).ToString()).BorderAround2();
+                        ascii++;
                     }
+
                 }
+
                 //exSheet.get_Range((char)65 + "4:" + (char)(65 + dgvHienThi.Columns.Count) + (dgvHienThi.Rows.Count + 3)).BorderAround2();
                 exSheet.Name = "Nhân Viên";
                 exBook.Activate(); //kich hoat file excel

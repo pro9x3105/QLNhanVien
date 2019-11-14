@@ -106,6 +106,7 @@ namespace QLThuNhoiBong
 
         private void BtnThem_Click(object sender, EventArgs e)
         {
+            string convertGioiTinh = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (txbMaNV.Text == "")
@@ -121,7 +122,6 @@ namespace QLThuNhoiBong
                 }
                 else
                 {
-                    string convertGioiTinh = "";
                     if (cbGioiTinh.Text=="Nam")
                     {
                         convertGioiTinh = "true";
@@ -135,18 +135,17 @@ namespace QLThuNhoiBong
                         MessageBox.Show("Bạn chưa chọn giới tính hoặc mã công việc");
                         return;
                     }
-                    if (MessageBox.Show("Bạn có chắc chắn muốn thêm nhân viên", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        connv1.CapNhapDuLieu("INSERT INTO tbl_NhanVien (MaNV,TenNV,GioiTinh,NgaySinh,DienThoai,DiaChi,MaCV) VALUES ('" + txbMaNV.Text + "','" + txbTenNV.Text + "','" + convertGioiTinh + "','" + dtpNgaySinh.Text + "','" + txbDienThoai.Text + "','" + txbDiaChi.Text + "','" + cbChonMaCV.Text + "')");
-                        MessageBox.Show("Thêm nhân viên thành công");
-                        BtnLamLai_Click(null, null);    //clear het txb
-                        NhanVien_Them_Load(null, null);                  
-                        return;
-                    }
                     
                 }
             }
-
+            if (MessageBox.Show("Bạn có chắc chắn muốn thêm nhân viên", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                connv1.CapNhapDuLieu("INSERT INTO tbl_NhanVien (MaNV,TenNV,GioiTinh,NgaySinh,DienThoai,DiaChi,MaCV) VALUES ('" + txbMaNV.Text + "','" + txbTenNV.Text + "','" + convertGioiTinh + "','" + dtpNgaySinh.Text + "','" + txbDienThoai.Text + "','" + txbDiaChi.Text + "','" + cbChonMaCV.Text + "')");
+                MessageBox.Show("Thêm nhân viên thành công");
+                BtnLamLai_Click(null, null);    //clear het txb
+                NhanVien_Them_Load(null, null);
+                return;
+            }
         }
     }
 }
